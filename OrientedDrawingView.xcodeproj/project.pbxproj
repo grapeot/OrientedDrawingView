@@ -14,7 +14,6 @@
 		95F054C61BC440D400A59497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F054BC1BC440D400A59497 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		95F054C71BC440D400A59497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F054BE1BC440D400A59497 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		95F054C81BC440D400A59497 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F054C01BC440D400A59497 /* DrawingView.swift */; settings = {ASSET_TAGS = (); }; };
-		95F054C91BC440D400A59497 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F054C11BC440D400A59497 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		95F054CA1BC440D400A59497 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F054C21BC440D400A59497 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		95F3AE621BC4541700EBC383 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3AE611BC4541700EBC383 /* ImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		95F3AE641BC4567200EBC383 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3AE631BC4567200EBC383 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -181,7 +180,6 @@
 			files = (
 				95F054B61BC43DF900A59497 /* OrientedDrawingView.podspec in Resources */,
 				95F054C71BC440D400A59497 /* Main.storyboard in Resources */,
-				95F054C91BC440D400A59497 /* Info.plist in Resources */,
 				95F054C61BC440D400A59497 /* LaunchScreen.storyboard in Resources */,
 				95F054C51BC440D400A59497 /* Assets.xcassets in Resources */,
 				95F054B81BC43EB200A59497 /* LICENSE in Resources */,
@@ -283,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -322,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
