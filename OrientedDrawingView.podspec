@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
                    Inspired by ACEDrawingView, and provides similar functionality to ACEDrawingView's pen tool, including undoing and setting line width and color.
                    DESC
 
-  # s.homepage     = "http://EXAMPLE/OrientedDrawingView"
+  s.homepage     = "http://gitlab.com/dlysenko/OrientedDrawingView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/OrientedDrawingView.git", :tag => "0.0.1" }
+  s.source       = { :git => "http://gitlab.com/dlysenko/OrientedDrawingView.git", :tag => "0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -87,8 +87,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "OrientedDrawingView", "OrientedDrawingView/**/*.{h,m,swift}"
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
