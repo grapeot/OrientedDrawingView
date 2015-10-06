@@ -17,6 +17,7 @@
 		95F054C91BC440D400A59497 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F054C11BC440D400A59497 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		95F054CA1BC440D400A59497 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F054C21BC440D400A59497 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		95F3AE621BC4541700EBC383 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3AE611BC4541700EBC383 /* ImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		95F3AE641BC4567200EBC383 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3AE631BC4567200EBC383 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		95F054CC1BC4417900A59497 /* OrientedDrawingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrientedDrawingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F3AE601BC4480800EBC383 /* OrientedDrawingView.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OrientedDrawingView.xctest; path = "/Users/dennis/dev/OrientedDrawingView/build/Debug-iphoneos/OrientedDrawingView.xctest"; sourceTree = "<absolute>"; };
 		95F3AE611BC4541700EBC383 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		95F3AE631BC4567200EBC383 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				95F054C11BC440D400A59497 /* Info.plist */,
 				95F054C21BC440D400A59497 /* ViewController.swift */,
 				95F3AE611BC4541700EBC383 /* ImageViewController.swift */,
+				95F3AE631BC4567200EBC383 /* NavigationController.swift */,
 			);
 			path = OrientedDrawingView;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F3AE641BC4567200EBC383 /* NavigationController.swift in Sources */,
 				95F054CA1BC440D400A59497 /* ViewController.swift in Sources */,
 				95F054C41BC440D400A59497 /* AppDelegate.swift in Sources */,
 				95F3AE621BC4541700EBC383 /* ImageViewController.swift in Sources */,

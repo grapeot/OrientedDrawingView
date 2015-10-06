@@ -18,12 +18,4 @@ class ImageViewController: UIViewController {
 
         self.imageView.image = self.image
     }
-    
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.Portrait]
-    }
-    
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
 }

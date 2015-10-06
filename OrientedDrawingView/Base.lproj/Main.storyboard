@@ -8,7 +8,7 @@
         <!--Drawing View Demo-->
         <scene sceneID="YJH-d1-Fxz">
             <objects>
-                <navigationController title="Drawing View Demo" id="NBb-zA-WYx" sceneMemberID="viewController">
+                <navigationController title="Drawing View Demo" id="NBb-zA-WYx" customClass="NavigationController" customModule="OrientedDrawingView" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cpr-0m-zSq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
