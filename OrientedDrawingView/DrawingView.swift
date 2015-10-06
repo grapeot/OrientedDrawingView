@@ -115,6 +115,7 @@ struct Action {
     
     
     private var allActions: [Action] = []
+    private var redoQueue: [Action] = []
     private var currentAction: Action?
     
     /// True if the user has not drawn anything or has cleared the drawing view.
@@ -130,10 +131,25 @@ struct Action {
     
     /// Undoes the last action in the drawing queue.
     public func undo() {
-        self.allActions.removeLast()
+        self.redoQueue.append(self.allActions.removeLast())
         self.setNeedsDisplay()
     }
     
+    public func redo() {
+        self.allActions.append(self.redoQueue.removeFirst())
+        self.drawActions(self.allActions)
+    }
+    
+    public func generateImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
+        self.drawRect(self.bounds)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
+    
+    // MARK: -
     public override func drawRect(rect: CGRect) {
         self.drawActions(self.allActions)
     }
@@ -143,6 +159,7 @@ struct Action {
         self.setNeedsDisplay()
     }
     
+    // TODO: cache current actions into an image
     private func drawActions(actions: [Action]) {
         let context = UIGraphicsGetCurrentContext()
         for action in actions {
@@ -192,13 +209,14 @@ struct Action {
             return
         }
         
-        // TODO: Only invalidate the rect that needs to be invalidated.
         var drawBox = bounds
         drawBox.origin.x -= self.lineWidth * 2
         drawBox.origin.y -= self.lineWidth * 2
         drawBox.size.width += self.lineWidth * 4
         drawBox.size.height += self.lineWidth * 4
         self.setNeedsDisplayInRect(drawBox)
+        
+        self.redoQueue = []
     }
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {

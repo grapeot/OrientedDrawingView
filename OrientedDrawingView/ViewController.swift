@@ -27,6 +27,18 @@ class ViewController: UIViewController {
     @IBAction func undo(sender: AnyObject) {
         self.drawingView.undo()
     }
+    @IBAction func redo(sender: AnyObject) {
+        self.drawingView.redo()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let destination = segue.destinationViewController as? ImageViewController else {
+            assert(false)
+            return
+        }
+        
+        destination.image = self.drawingView.generateImage()
+    }
 
 }
 

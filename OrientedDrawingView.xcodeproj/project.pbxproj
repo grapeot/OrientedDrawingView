@@ -16,6 +16,7 @@
 		95F054C81BC440D400A59497 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F054C01BC440D400A59497 /* DrawingView.swift */; settings = {ASSET_TAGS = (); }; };
 		95F054C91BC440D400A59497 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95F054C11BC440D400A59497 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		95F054CA1BC440D400A59497 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F054C21BC440D400A59497 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		95F3AE621BC4541700EBC383 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3AE611BC4541700EBC383 /* ImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		95F054A11BC4215E00A59497 /* OrientedDrawingView.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OrientedDrawingView.xctest; path = "/Users/dennis/dev/OrientedDrawingView/build/Debug-iphoneos/OrientedDrawingView.xctest"; sourceTree = "<absolute>"; };
 		95F054B51BC43DF900A59497 /* OrientedDrawingView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrientedDrawingView.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95F054B71BC43EB200A59497 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		95F054BA1BC440D400A59497 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		95F054C11BC440D400A59497 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F054C21BC440D400A59497 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95F054CC1BC4417900A59497 /* OrientedDrawingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrientedDrawingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F3AE601BC4480800EBC383 /* OrientedDrawingView.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OrientedDrawingView.xctest; path = "/Users/dennis/dev/OrientedDrawingView/build/Debug-iphoneos/OrientedDrawingView.xctest"; sourceTree = "<absolute>"; };
+		95F3AE611BC4541700EBC383 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,6 @@
 		95F054B91BC440D400A59497 /* OrientedDrawingView */ = {
 			isa = PBXGroup;
 			children = (
-				95F054CB1BC440DB00A59497 /* OrientedDrawingViewTests */,
 				95F054BA1BC440D400A59497 /* AppDelegate.swift */,
 				95F054BB1BC440D400A59497 /* Assets.xcassets */,
 				95F054BC1BC440D400A59497 /* LaunchScreen.storyboard */,
@@ -81,16 +82,10 @@
 				95F054C01BC440D400A59497 /* DrawingView.swift */,
 				95F054C11BC440D400A59497 /* Info.plist */,
 				95F054C21BC440D400A59497 /* ViewController.swift */,
+				95F3AE611BC4541700EBC383 /* ImageViewController.swift */,
 			);
 			path = OrientedDrawingView;
 			sourceTree = "<group>";
-		};
-		95F054CB1BC440DB00A59497 /* OrientedDrawingViewTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = OrientedDrawingViewTests;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -127,7 +122,7 @@
 			);
 			name = OrientedDrawingViewTests;
 			productName = DrawingTestTests;
-			productReference = 95F054A11BC4215E00A59497 /* OrientedDrawingView.xctest */;
+			productReference = 95F3AE601BC4480800EBC383 /* OrientedDrawingView.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -197,6 +192,7 @@
 			files = (
 				95F054CA1BC440D400A59497 /* ViewController.swift in Sources */,
 				95F054C41BC440D400A59497 /* AppDelegate.swift in Sources */,
+				95F3AE621BC4541700EBC383 /* ImageViewController.swift in Sources */,
 				95F054C81BC440D400A59497 /* DrawingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

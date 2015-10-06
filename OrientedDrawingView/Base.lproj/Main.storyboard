@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NBb-zA-WYx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--Drawing View Demo-->
+        <scene sceneID="YJH-d1-Fxz">
+            <objects>
+                <navigationController title="Drawing View Demo" id="NBb-zA-WYx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cpr-0m-zSq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SrS-5O-NMP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgh-QL-w4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="462"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawingTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OrientedDrawingView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,18 +35,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKn-FR-7yW">
-                                <rect key="frame" x="0.0" y="20" width="600" height="74"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="46"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glj-Wg-Zq6">
-                                        <rect key="frame" x="95" y="22" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glj-Wg-Zq6">
+                                        <rect key="frame" x="16" y="8" width="34" height="30"/>
                                         <animations/>
                                         <state key="normal" title="clear"/>
                                         <connections>
                                             <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sny-YN-eeu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEl-zA-jdt">
-                                        <rect key="frame" x="194" y="22" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ses-4z-UUB">
+                                        <rect key="frame" x="149" y="8" width="32" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="redo"/>
+                                        <connections>
+                                            <action selector="redo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tmn-HY-XbO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyO-xP-wwe">
+                                        <rect key="frame" x="213" y="8" width="122" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="generate UIImage"/>
+                                        <connections>
+                                            <segue destination="g08-u6-cLs" kind="show" id="q4x-Vx-YR7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEl-zA-jdt">
+                                        <rect key="frame" x="82" y="8" width="35" height="30"/>
                                         <animations/>
                                         <state key="normal" title="undo"/>
                                         <connections>
@@ -40,11 +73,19 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="k19-zc-d1J"/>
+                                    <constraint firstAttribute="bottom" secondItem="glj-Wg-Zq6" secondAttribute="bottom" constant="8" id="Do6-Hf-udC"/>
+                                    <constraint firstItem="fEl-zA-jdt" firstAttribute="leading" secondItem="glj-Wg-Zq6" secondAttribute="trailing" constant="32" id="JF3-Ml-4uu"/>
+                                    <constraint firstItem="glj-Wg-Zq6" firstAttribute="leading" secondItem="TKn-FR-7yW" secondAttribute="leading" constant="16" id="K4Y-6A-yrp"/>
+                                    <constraint firstItem="IyO-xP-wwe" firstAttribute="leading" secondItem="Ses-4z-UUB" secondAttribute="trailing" constant="32" id="SBm-qs-oNh"/>
+                                    <constraint firstItem="Ses-4z-UUB" firstAttribute="centerY" secondItem="TKn-FR-7yW" secondAttribute="centerY" id="XVS-VV-gDF"/>
+                                    <constraint firstItem="Ses-4z-UUB" firstAttribute="leading" secondItem="fEl-zA-jdt" secondAttribute="trailing" constant="32" id="f2W-0W-Btx"/>
+                                    <constraint firstItem="fEl-zA-jdt" firstAttribute="centerY" secondItem="TKn-FR-7yW" secondAttribute="centerY" id="tTK-WH-LiM"/>
+                                    <constraint firstItem="IyO-xP-wwe" firstAttribute="centerY" secondItem="TKn-FR-7yW" secondAttribute="centerY" id="wZG-xY-Ud3"/>
+                                    <constraint firstItem="glj-Wg-Zq6" firstAttribute="top" secondItem="TKn-FR-7yW" secondAttribute="top" constant="8" id="yAg-EQ-boP"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnC-8c-TEw" customClass="DrawingView" customModule="DrawingTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnC-8c-TEw" customClass="DrawingView" customModule="OrientedDrawingView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="110" width="600" height="490"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -69,6 +110,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dnC-8c-TEw" secondAttribute="bottom" id="hK4-2X-t4R"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ka4-1B-I2z"/>
                     <connections>
                         <outlet property="drawingView" destination="dnC-8c-TEw" id="AH0-im-vqy"/>
                     </connections>
@@ -76,6 +118,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="500" y="462"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="LvM-if-Eqq">
+            <objects>
+                <viewController id="g08-u6-cLs" customClass="ImageViewController" customModule="OrientedDrawingView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="08T-AS-uA3"/>
+                        <viewControllerLayoutGuide type="bottom" id="U0t-Yw-IRk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="myu-30-z5r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-99-AAN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZmE-99-AAN" firstAttribute="width" secondItem="myu-30-z5r" secondAttribute="width" id="Az3-5U-7Xh"/>
+                            <constraint firstItem="ZmE-99-AAN" firstAttribute="centerX" secondItem="myu-30-z5r" secondAttribute="centerX" id="DlG-le-XQR"/>
+                            <constraint firstItem="ZmE-99-AAN" firstAttribute="height" secondItem="myu-30-z5r" secondAttribute="height" id="L0s-MS-rMT"/>
+                            <constraint firstItem="ZmE-99-AAN" firstAttribute="centerY" secondItem="myu-30-z5r" secondAttribute="centerY" id="Wii-F2-5YO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ZmE-99-AAN" id="kKH-jA-eJS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFG-ZG-536" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="462"/>
         </scene>
     </scenes>
 </document>
