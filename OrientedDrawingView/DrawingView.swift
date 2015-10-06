@@ -87,8 +87,8 @@ extension UIDeviceOrientation {
 }
 
 @IBDesignable public class DrawingView: UIView {
-    @IBInspectable var lineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var lineWidth: CGFloat = 8
+    @IBInspectable public var lineColor: UIColor = UIColor.blueColor()
+    @IBInspectable public var lineWidth: CGFloat = 8
     
     private var allActions: [Action] = []
     private var currentAction: Action?
