@@ -29,7 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		95F0548D1BC4215E00A59497 /* OrientedDrawingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = OrientedDrawingView.app; path = "/Users/dennis/dev/OrientedDrawingView/build/Debug-iphoneos/OrientedDrawingView.app"; sourceTree = "<absolute>"; };
 		95F054A11BC4215E00A59497 /* OrientedDrawingView.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OrientedDrawingView.xctest; path = "/Users/dennis/dev/OrientedDrawingView/build/Debug-iphoneos/OrientedDrawingView.xctest"; sourceTree = "<absolute>"; };
 		95F054B51BC43DF900A59497 /* OrientedDrawingView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrientedDrawingView.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95F054B71BC43EB200A59497 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		95F054C01BC440D400A59497 /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		95F054C11BC440D400A59497 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F054C21BC440D400A59497 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95F054CC1BC4417900A59497 /* OrientedDrawingView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrientedDrawingView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,7 @@
 				95F054B51BC43DF900A59497 /* OrientedDrawingView.podspec */,
 				95F054B71BC43EB200A59497 /* LICENSE */,
 				95F054B91BC440D400A59497 /* OrientedDrawingView */,
+				95F054CC1BC4417900A59497 /* OrientedDrawingView.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +109,7 @@
 			);
 			name = OrientedDrawingView;
 			productName = DrawingTest;
-			productReference = 95F0548D1BC4215E00A59497 /* OrientedDrawingView.app */;
+			productReference = 95F054CC1BC4417900A59497 /* OrientedDrawingView.app */;
 			productType = "com.apple.product-type.application";
 		};
 		95F054A01BC4215E00A59497 /* OrientedDrawingViewTests */ = {
@@ -324,7 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = DrawingTest/Info.plist;
+				INFOPLIST_FILE = OrientedDrawingView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.riffdigital.DrawingTest;
@@ -336,7 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = DrawingTest/Info.plist;
+				INFOPLIST_FILE = OrientedDrawingView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.riffdigital.DrawingTest;
