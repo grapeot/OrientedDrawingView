@@ -67,35 +67,44 @@
 		95F054841BC4215E00A59497 = {
 			isa = PBXGroup;
 			children = (
+				95F054B91BC440D400A59497 /* OrientedDrawingView */,
+				95F3AE651BC4574500EBC383 /* OrientedDrawingViewDemo */,
 				95F054B51BC43DF900A59497 /* OrientedDrawingView.podspec */,
 				95F054B71BC43EB200A59497 /* LICENSE */,
-				95F054B91BC440D400A59497 /* OrientedDrawingView */,
-				95F054CC1BC4417900A59497 /* OrientedDrawingView.app */,
 			);
 			sourceTree = "<group>";
 		};
 		95F054B91BC440D400A59497 /* OrientedDrawingView */ = {
 			isa = PBXGroup;
 			children = (
-				95F054BA1BC440D400A59497 /* AppDelegate.swift */,
-				95F054BB1BC440D400A59497 /* Assets.xcassets */,
-				95F054BC1BC440D400A59497 /* LaunchScreen.storyboard */,
-				95F054BE1BC440D400A59497 /* Main.storyboard */,
 				95F054C01BC440D400A59497 /* DrawingView.swift */,
-				95F054C11BC440D400A59497 /* Info.plist */,
+			);
+			path = OrientedDrawingView;
+			sourceTree = "<group>";
+		};
+		95F3AE651BC4574500EBC383 /* OrientedDrawingViewDemo */ = {
+			isa = PBXGroup;
+			children = (
 				95F054C21BC440D400A59497 /* ViewController.swift */,
 				95F3AE611BC4541700EBC383 /* ImageViewController.swift */,
 				95F3AE631BC4567200EBC383 /* NavigationController.swift */,
+				95F054BA1BC440D400A59497 /* AppDelegate.swift */,
+				95F054BC1BC440D400A59497 /* LaunchScreen.storyboard */,
+				95F054BE1BC440D400A59497 /* Main.storyboard */,
+				95F054BB1BC440D400A59497 /* Assets.xcassets */,
+				95F054C11BC440D400A59497 /* Info.plist */,
+				95F054CC1BC4417900A59497 /* OrientedDrawingView.app */,
 			);
+			name = OrientedDrawingViewDemo;
 			path = OrientedDrawingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95F0548C1BC4215E00A59497 /* OrientedDrawingView */ = {
+		95F0548C1BC4215E00A59497 /* OrientedDrawingViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95F054AA1BC4215E00A59497 /* Build configuration list for PBXNativeTarget "OrientedDrawingView" */;
+			buildConfigurationList = 95F054AA1BC4215E00A59497 /* Build configuration list for PBXNativeTarget "OrientedDrawingViewDemo" */;
 			buildPhases = (
 				95F054891BC4215E00A59497 /* Sources */,
 				95F0548A1BC4215E00A59497 /* Frameworks */,
@@ -105,7 +114,7 @@
 			);
 			dependencies = (
 			);
-			name = OrientedDrawingView;
+			name = OrientedDrawingViewDemo;
 			productName = DrawingTest;
 			productReference = 95F054CC1BC4417900A59497 /* OrientedDrawingView.app */;
 			productType = "com.apple.product-type.application";
@@ -159,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95F0548C1BC4215E00A59497 /* OrientedDrawingView */,
+				95F0548C1BC4215E00A59497 /* OrientedDrawingViewDemo */,
 				95F054A01BC4215E00A59497 /* OrientedDrawingViewTests */,
 			);
 		};
@@ -213,7 +222,7 @@
 /* Begin PBXTargetDependency section */
 		95F054A31BC4215E00A59497 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95F0548C1BC4215E00A59497 /* OrientedDrawingView */;
+			target = 95F0548C1BC4215E00A59497 /* OrientedDrawingViewDemo */;
 			targetProxy = 95F054A21BC4215E00A59497 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -381,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95F054AA1BC4215E00A59497 /* Build configuration list for PBXNativeTarget "OrientedDrawingView" */ = {
+		95F054AA1BC4215E00A59497 /* Build configuration list for PBXNativeTarget "OrientedDrawingViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95F054AB1BC4215E00A59497 /* Debug */,
