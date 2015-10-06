@@ -115,7 +115,7 @@ struct Action {
     
     
     private var allActions: [Action] = []
-    private var redoQueue: [Action] = []
+    private var redoStack: [Action] = []
     private var currentAction: Action?
     
     /// True if the user has not drawn anything or has cleared the drawing view.
@@ -125,19 +125,28 @@ struct Action {
     
     /// Deletes all content from the drawing view.
     public func clear() {
+        self.redoStack = []
         self.allActions = []
         self.setNeedsDisplay()
     }
     
     /// Undoes the last action in the drawing queue.
     public func undo() {
-        self.redoQueue.append(self.allActions.removeLast())
+        guard !self.allActions.isEmpty else {
+            return
+        }
+        
+        self.redoStack.append(self.allActions.removeLast())
         self.setNeedsDisplay()
     }
     
     public func redo() {
-        self.allActions.append(self.redoQueue.removeFirst())
-        self.drawActions(self.allActions)
+        guard !self.redoStack.isEmpty else {
+            return
+        }
+        
+        self.allActions.append(self.redoStack.removeLast())
+        self.setNeedsDisplay()
     }
     
     public func generateImage() -> UIImage {
@@ -216,7 +225,7 @@ struct Action {
         drawBox.size.height += self.lineWidth * 4
         self.setNeedsDisplayInRect(drawBox)
         
-        self.redoQueue = []
+        self.redoStack = []
     }
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
