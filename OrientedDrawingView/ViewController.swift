@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             return
         }
         
-        destination.image = self.drawingView.generateImage()
+        destination.image = self.drawingView.generateCorrectlyOrientedImage()
     }
 
 }

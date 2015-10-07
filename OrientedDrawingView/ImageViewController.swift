@@ -13,9 +13,21 @@ class ImageViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
 
+    @IBAction func goBack(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.imageView.image = self.image
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [UIInterfaceOrientationMask.Portrait]
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
 }

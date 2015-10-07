@@ -15,12 +15,12 @@ extension CGPoint {
     }
 }
 
-extension UIDeviceOrientation {
+extension UIInterfaceOrientation {
     /// Gets the necessary angle to rotate by in order to compensate for device orientation.
     var angleDegrees: CGFloat {
         switch self {
-        case .LandscapeLeft: return 270
-        case .LandscapeRight: return 90
+        case .LandscapeLeft: return 90
+        case .LandscapeRight: return 270
         case .PortraitUpsideDown: return 180
         default: return 0
         }
@@ -36,7 +36,7 @@ extension UIDeviceOrientation {
 */
 struct Action {
     /// The orientation the device had when this action was started.
-    var sourceOrientation: UIDeviceOrientation
+    var sourceOrientation: UIInterfaceOrientation
     
     /// The bounds the parent drawing view had when this action was started.
     var sourceBounds: CGSize
@@ -48,7 +48,7 @@ struct Action {
     private var sourcePath: CGMutablePath
     
     
-    init(sourceOrientation: UIDeviceOrientation, sourceBounds: CGSize, color: UIColor, strokeWidth: CGFloat) {
+    init(sourceOrientation: UIInterfaceOrientation, sourceBounds: CGSize, color: UIColor, strokeWidth: CGFloat) {
         self.sourceOrientation = sourceOrientation
         self.sourceBounds = sourceBounds
         self.color = color
@@ -58,9 +58,9 @@ struct Action {
     
     
     /// Rotates & scales the source path. See class swiftdoc.
-    func getTransformedPath(orientation orientation: UIDeviceOrientation, bounds: CGSize) -> CGPath {
+    func getTransformedPath(orientation orientation: UIInterfaceOrientation, bounds: CGSize) -> CGPath {
         let sourceAngle = self.sourceOrientation.angleDegrees
-        let currentAngle = UIDevice.currentDevice().orientation.angleDegrees
+        let currentAngle = orientation.angleDegrees
         let diffDegrees = (currentAngle - sourceAngle + 360) % 360
         let diff = diffDegrees * CGFloat(M_PI) / 180
         
@@ -149,9 +149,19 @@ struct Action {
         self.setNeedsDisplay()
     }
     
-    public func generateImage() -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
-        self.drawRect(self.bounds)
+    /**
+        Generates the exact image that would be displayed on the screen if the device were in portrait orientation.
+    */
+    public func generateCorrectlyOrientedImage() -> UIImage {
+        var portraitSize: CGSize
+        if self.bounds.size.width < self.bounds.size.height {
+            portraitSize = self.bounds.size
+        } else {
+            portraitSize = CGSize(width: self.bounds.size.height, height: self.bounds.size.width)
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(portraitSize, false, 0)
+        self.drawActions(self.allActions, bounds: portraitSize, currentOrientation: .Portrait)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
@@ -160,7 +170,7 @@ struct Action {
     
     // MARK: -
     public override func drawRect(rect: CGRect) {
-        self.drawActions(self.allActions)
+        self.drawActions(self.allActions, bounds: self.bounds.size)
     }
     
     public override func layoutSubviews() {
@@ -169,10 +179,10 @@ struct Action {
     }
     
     // TODO: cache current actions into an image
-    private func drawActions(actions: [Action]) {
+    private func drawActions(actions: [Action], bounds: CGSize, currentOrientation: UIInterfaceOrientation = UIApplication.sharedApplication().statusBarOrientation) {
         let context = UIGraphicsGetCurrentContext()
         for action in actions {
-            let path = action.getTransformedPath(orientation: UIDevice.currentDevice().orientation, bounds: self.bounds.size)
+            let path = action.getTransformedPath(orientation: currentOrientation, bounds: bounds)
             CGContextAddPath(context, path)
             CGContextSetLineCap(context, CGLineCap.Round)
             CGContextSetLineWidth(context, action.strokeWidth)
@@ -200,7 +210,7 @@ struct Action {
         self.previousPoint = touch.previousLocationInView(self)
         self.currentPoint = touch.locationInView(self)
         
-        allActions.append(Action(sourceOrientation: UIDevice.currentDevice().orientation, sourceBounds: self.bounds.size, color: self.lineColor, strokeWidth: self.lineWidth))
+        allActions.append(Action(sourceOrientation: UIApplication.sharedApplication().statusBarOrientation, sourceBounds: self.bounds.size, color: self.lineColor, strokeWidth: self.lineWidth))
         self.currentAction = allActions.last
     }
     
