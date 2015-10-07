@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "OrientedDrawingView"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "A view that the user can draw on, with support for keeping the drawing the same when orientation is changed."
 
   s.description  = <<-DESC
@@ -75,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://gitlab.com/dlysenko/OrientedDrawingView.git", :tag => "v0.0.5" }
+  s.source       = { :git => "http://gitlab.com/dlysenko/OrientedDrawingView.git", :tag => "v0.0.6" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
