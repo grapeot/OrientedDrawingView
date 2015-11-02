@@ -172,7 +172,7 @@ struct Action {
     */
     public func generateImage() -> UIImage {
         let portraitSize: CGSize = self.bounds.size
-        UIGraphicsBeginImageContextWithOptions(portraitSize, false, 0)
+        UIGraphicsBeginImageContextWithOptions(portraitSize, false, 1)
         self.drawActions(self.allActions, bounds: portraitSize, currentOrientation: .Portrait)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
