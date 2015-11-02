@@ -167,6 +167,17 @@ struct Action {
         return image
     }
     
+    /**
+        Generates the exact image without considering the orientation
+    */
+    public func generateImage() -> UIImage {
+        let portraitSize: CGSize = self.bounds.size
+        UIGraphicsBeginImageContextWithOptions(portraitSize, false, 0)
+        self.drawActions(self.allActions, bounds: portraitSize, currentOrientation: .Portrait)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
     
     // MARK: -
     public override func drawRect(rect: CGRect) {

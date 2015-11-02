@@ -75,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://gitlab.com/dlysenko/OrientedDrawingView.git", :tag => "v0.0.6" }
+  s.source       = { :git => "https://github.com/grapeot/OrientedDrawingView.git", :tag => "v0.0.6" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
